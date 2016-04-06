@@ -3,11 +3,11 @@ package Circuit;
 
 public abstract class $Terminaux extends $Elementaire {
 
-	protected boolean etat;
+	protected Etat etat;
 	
 	public abstract void majEtat();
 	
-	public boolean exec(){
+	public Etat exec(){
 		majEtat();
 		return this.etat;
 	}

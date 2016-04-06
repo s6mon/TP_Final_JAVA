@@ -7,9 +7,11 @@ public class PortEntree extends $Port {
 		etat = Etat.FALSE;
 	}
 	
-	public PortEntree(Fil fila){
-		entree = fila;
-		fila.setPortSortie(this);
+	public void setFilPort(Fil fil){
+		entree = fil;
 	}
 	
+	public void majEtat(){
+		etat = entree.getEntree().getEtat();
+	}
 }

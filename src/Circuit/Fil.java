@@ -5,8 +5,14 @@ public class Fil {
 	private PortEntree sortie;
 	
 	
-	public Fil(PortSortie p1, PortEntree p2){
-		entree = p1;
-		sortie = p2;
+	public Fil(PortSortie entr, PortEntree sort){
+		entree = entr;
+		sortie = sort;
+		sortie.setFilPort(this);
+		entree.setFilPort(this);
+	}
+	
+	public PortSortie getEntree(){
+		return entree;
 	}
 }
