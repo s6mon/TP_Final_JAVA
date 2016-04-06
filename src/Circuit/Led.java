@@ -17,6 +17,7 @@ public class Led extends $Recepteur {
 	@Override
 	public void majEtat() {
 		
+		//test
 	}
 
 	@Override
