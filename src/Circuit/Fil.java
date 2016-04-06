@@ -1,10 +1,15 @@
 package Circuit;
 
 public class Fil {
-	private $Port entree;
-	private $Port sortie;
+	private $Port portEntree;
+	private $Port portSortie;
+	
+	
+	public Fil($Port entree){
+		portEntree = entree;
+	}
 	
 	public void setPortSortie($Port p){
-		sortie = p;
+		portSortie = p;
 	}
 }
