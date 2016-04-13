@@ -21,5 +21,13 @@ public abstract class $Composant  implements _Composant{
 			}
 		}
 		return true;
-	}	
+	}
+	
+	public PortSortie getSorties(int i){
+		return sorties[i];
+	}
+	
+	public PortEntree getEntree(int i){
+		return entrees[i]; 
+	}
 }
