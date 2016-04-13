@@ -6,7 +6,6 @@ public class Led extends $Recepteur {
 	public Led(int i){
 		nb_entree = 1;
 		nb_sortie = 0;
-		indice = i;
 		etat = Etat.FALSE;
 		entrees = new PortEntree[1];
 		entrees[0] = new PortEntree();

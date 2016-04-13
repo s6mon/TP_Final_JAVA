@@ -4,13 +4,10 @@ public abstract class $Composant  implements _Composant{
 	
 	protected int nb_entree;
 	protected int nb_sortie;
-	protected int indice;
 	protected PortEntree[] entrees;
 	protected PortSortie[] sorties;
 	
-	public void eval(){
-		
-	}
+	public abstract void eval();
 
 	public boolean compConnected() {
 		for(int i =0; i<nb_entree; i++){

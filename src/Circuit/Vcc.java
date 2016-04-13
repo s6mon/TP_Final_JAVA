@@ -5,7 +5,6 @@ public class Vcc extends $Generateur{
 	public Vcc (int i, Etat e){
 		nb_entree = 0;
 		nb_sortie = 1;
-		indice = i;
 		etat = Etat.TRUE;
 		entrees = null;
 		sorties[0] = new PortSortie();

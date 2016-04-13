@@ -24,7 +24,7 @@ public abstract class $Circuit implements _Circuit{
 	public int nbComposant(){return elements.size();}
 	
 	public void ajouterComp($Composant c){
-		elements.add(elements.size(), c);
+		elements.add(c);
 	}
 	
 	public $Composant getComposant(int n_comp){return elements.get(n_comp);}
