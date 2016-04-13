@@ -12,9 +12,7 @@ public class Vcc extends $Generateur{
 	}
 	
 	@Override
-	public void majEtat() {
-		
-	}
+	public void majEtat() {}
 
 	@Override
 	public void eval() {
