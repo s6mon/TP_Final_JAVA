@@ -7,6 +7,7 @@ public class Vcc extends $Generateur{
 		nb_sortie = 1;
 		etat = Etat.TRUE;
 		entrees = null;
+		sorties = new PortSortie[1];
 		sorties[0] = new PortSortie();
 	}
 	
