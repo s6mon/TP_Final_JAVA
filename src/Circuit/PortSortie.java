@@ -1,17 +1,16 @@
 package Circuit;
+import java.util.ArrayList;
 
 public class PortSortie extends $Port {
-	private Fil[] Sorties;
-	private int nb_fil;
+	private ArrayList<Fil> Sorties;
 
 	public PortSortie(){
+		Sorties = new ArrayList<Fil>();
 		etat = Etat.FALSE;
-		nb_fil = 0;
 		connected = false;
 	}
 	public void connect(Fil fil) {
-		Sorties[nb_fil] = fil;
-		nb_fil++;
+		Sorties.add(fil);
 		connected = true;
 		
 	}
