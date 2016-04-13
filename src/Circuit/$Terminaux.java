@@ -7,8 +7,4 @@ public abstract class $Terminaux extends $Elementaire {
 	
 	public abstract void majEtat();
 	
-	public Etat exec(){
-		majEtat();
-		return this.etat;
-	}
 }

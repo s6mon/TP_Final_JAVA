@@ -8,8 +8,8 @@ public class Fil {
 	public Fil(PortSortie entr, PortEntree sort){
 		entree = entr;
 		sortie = sort;
-		sortie.setFilPort(this);
-		entree.setFilPort(this);
+		sortie.connect(this);
+		entree.connect(this);
 	}
 	
 	public PortSortie getEntree(){

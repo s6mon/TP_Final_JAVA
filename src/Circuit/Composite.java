@@ -1,5 +1,5 @@
 package Circuit;
 
-public class Composite implements _Circuit, _Composant {
+public class Composite  extends $Circuit implements _Composant {
 
 }
