@@ -1,7 +1,6 @@
 package Circuit;
 
-import jus.util.assertion.Ensure;
-import jus.util.assertion.Require;
+import jus.util.assertion.*;
 
 public class Et extends $Transformateur{
 	
@@ -12,12 +11,12 @@ public class Et extends $Transformateur{
 	public Et() throws Ensure {
 		this.nb_entree = 2;
 		this.nb_sortie = 1;
-		this.entrees = new PortEntree[2];
+		this.entrees = new PortSimple[2];
 		for(int i = 0; i < 2; i++) {
-			entrees[i] = new PortEntree();
+			entrees[i] = new PortSimple();
 		}
-		this.sorties = new PortSortie[1];
-		sorties[0] = new PortSortie();
+		this.sorties = new PortMultiple[1];
+		sorties[0] = new PortMultiple();
 		if(!(this.nb_entree == 2 && this.nb_sortie == 1)) {
 			throw new Ensure ("!(this.nb_entree == 2 && this.nb_sortie == 1)");
 		}

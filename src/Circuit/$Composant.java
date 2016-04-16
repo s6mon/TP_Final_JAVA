@@ -4,8 +4,8 @@ public abstract class $Composant  implements _Composant{
 	
 	protected int nb_entree;
 	protected int nb_sortie;
-	protected PortEntree[] entrees;
-	protected PortSortie[] sorties;
+	protected PortSimple[] entrees;
+	protected PortMultiple[] sorties;
 	
 	public abstract void eval();
 
@@ -23,11 +23,23 @@ public abstract class $Composant  implements _Composant{
 		return true;
 	}
 	
-	public PortSortie getSorties(int i){
+	public PortMultiple getSorties(int i){
 		return sorties[i];
 	}
 	
-	public PortEntree getEntree(int i){
+	public PortSimple getEntree(int i){
 		return entrees[i]; 
+	}
+	
+	public void exec(){
+		majEtatPortsEntrees();
+		eval();
+	}
+
+	private void majEtatPortsEntrees() {
+		for (int i = 0; i<nb_entree; i++){
+			entrees[i].majEtat();
+		}
+		
 	}
 }

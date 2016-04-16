@@ -1,5 +1,5 @@
 package Circuit;
 
 public enum Etat {
-	TRUE, FALSE;
+	TRUE, FALSE, HAUT, BAS, ETEINT, ALLUME, ERROR;
 }

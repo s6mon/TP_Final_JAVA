@@ -1,9 +1,8 @@
 package Circuit;
 
-import jus.util.assertion.Ensure;
-import jus.util.assertion.Require;
+import jus.util.assertion.*;
 
-public class Non extends $Composant{
+public class Non extends $Transformateur{
 
 	/**
 	 * Constructeur par défaut du transformateur Non
@@ -12,10 +11,10 @@ public class Non extends $Composant{
 	public Non() throws Ensure {
 		this.nb_entree = 1;
 		this.nb_sortie = 1;
-		this.entrees = new PortEntree[1];
-		entrees[0] = new PortEntree();
-		this.sorties = new PortSortie[1];
-		sorties[0] = new PortSortie();
+		this.entrees = new PortSimple[1];
+		entrees[0] = new PortSimple();
+		this.sorties = new PortMultiple[1];
+		sorties[0] = new PortMultiple();
 		if(!(this.nb_entree == 1 && this.nb_sortie == 1)) {
 			throw new Ensure ("!(this.nb_entree == 1 && this.nb_sortie == 1)");
 		}

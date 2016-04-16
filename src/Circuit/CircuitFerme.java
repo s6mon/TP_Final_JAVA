@@ -1,8 +1,16 @@
 package Circuit;
 
+import java.util.*;
+
 import jus.util.assertion.Require;
 
 public class CircuitFerme extends $Circuit{
+	
+	public CircuitFerme(){
+		elements = new HashMap<Integer, $Composant>();
+		execList = new ArrayList<$Composant>();
+		executable = true;
+	}
 	
 	/**
 	 * Procédure pour executer le circuit.
@@ -11,8 +19,8 @@ public class CircuitFerme extends $Circuit{
 	public void exec(){
 		this.setExecutable();
 		if(!this.executable){throw new Require("!this.executable") ;}
-		for(int i = 0; i<elements.size(); i++){
-			elements.get(i).eval();
+		for(int i = 0; i<execList.size(); i++){
+			execList.get(i).exec();
 		}
 	}
 	

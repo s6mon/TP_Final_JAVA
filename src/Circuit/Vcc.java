@@ -2,13 +2,13 @@ package Circuit;
 
 public class Vcc extends $Generateur{
 	
-	public Vcc (int i, Etat e){
+	public Vcc (){
 		nb_entree = 0;
 		nb_sortie = 1;
-		etat = Etat.TRUE;
+		etat = Etat.HAUT;
 		entrees = null;
-		sorties = new PortSortie[1];
-		sorties[0] = new PortSortie();
+		sorties = new PortMultiple[1];
+		sorties[0] = new PortMultiple();
 	}
 	
 	@Override
@@ -16,7 +16,7 @@ public class Vcc extends $Generateur{
 
 	@Override
 	public void eval() {
-		sorties[0].setEtat(etat);
+		sorties[0].setEtat(Etat.TRUE);
 	}
 
 	

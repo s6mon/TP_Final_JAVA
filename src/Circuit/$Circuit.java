@@ -1,10 +1,12 @@
 package Circuit;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public abstract class $Circuit implements _Circuit{
 	
-	protected ArrayList<$Composant> elements;
+	protected HashMap<Integer, $Composant> elements;
+	protected ArrayList<$Composant> execList;
 	protected boolean executable;
 	
 	/**
@@ -13,8 +15,8 @@ public abstract class $Circuit implements _Circuit{
 	 */
 	public void setExecutable(){
 		boolean res = true;
-		for (int i = 0; i<elements.size(); i++){
-			if (!elements.get(i).compConnected()){
+		for (int i = 0; i<execList.size(); i++){
+			if (!execList.get(i).compConnected()){
 				res = false ;
 			}
 		}
@@ -29,8 +31,9 @@ public abstract class $Circuit implements _Circuit{
 	/**
 	 * Ajoute un composant sur le circuit sans le brancher (pour les générateur)
 	 */
-	public void ajouterComp($Composant c){
-		elements.add(c);
+	public void ajouterComp($Composant c, int indice){
+		execList.add(c);
+		elements.put(indice, c);
 	}
 	
 	/**
@@ -42,6 +45,10 @@ public abstract class $Circuit implements _Circuit{
 	 */
 	public void brancher ($Composant c1, int i1, $Composant c2, int i2){
 		Fil f = new Fil(c2.getSorties(i2), c1.getEntree(i1));
+	}
+	
+	public void brancherEntree ($Composant c1, int i1, $Composant c2, int i2){
+		
 	}
 	
 	public $Composant getComposant(int n_comp){return elements.get(n_comp);}

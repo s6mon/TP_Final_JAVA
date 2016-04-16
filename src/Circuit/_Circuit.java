@@ -12,7 +12,7 @@ public interface _Circuit {
 	 * Procédure pour ajouter un fil au circuit
 	 * @param f le fil a rajouter dans le circuit
 	 */
-	public void ajouterComp($Composant c);
+	public void ajouterComp($Composant c, int indice);
 	
 	/**
 	 * getteur pour elements
