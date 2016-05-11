@@ -5,8 +5,8 @@ import java.util.HashMap;
 
 public abstract class $Circuit implements _Circuit{
 	
-	protected HashMap<Integer, $Composant> elements;
-	protected ArrayList<$Composant> execList;
+	protected HashMap<Integer, $Composant> elements; //couple (nom, nomposant);
+	protected ArrayList<$Composant> execList; //liste que l'on tri pour executer les elements dans le bon ordre.
 	protected boolean executable;
 	
 	/**
