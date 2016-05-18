@@ -25,7 +25,7 @@ public class Ou extends $Transformateur{
 	/**
 	 * Fonction qui permet la mise à jour de l'état dans le port de sortie
 	 */
-	public void eval() {
+	public void exec() {
 		if (this.entrees[0].getEtat() == Etat.TRUE || this.entrees[1].getEtat() == Etat.TRUE) {
 			this.sorties[0].setEtat(Etat.TRUE);
 		} else if (this.entrees[0].getEtat() == Etat.FALSE && this.entrees[1].getEtat() == Etat.FALSE) {

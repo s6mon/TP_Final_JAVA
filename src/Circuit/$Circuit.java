@@ -7,6 +7,7 @@ public abstract class $Circuit implements _Circuit{
 	
 	protected HashMap<Integer, $Composant> elements; //couple (nom, nomposant);
 	protected ArrayList<$Composant> execList; //liste que l'on tri pour executer les elements dans le bon ordre.
+	protected ArrayList<Fil> connexions;
 	protected boolean executable;
 	
 	/**
@@ -16,6 +17,7 @@ public abstract class $Circuit implements _Circuit{
 	public void setExecutable(){
 		boolean res = true;
 		for (int i = 0; i<execList.size(); i++){
+			System.out.println(execList.get(i) + "," + execList.get(i).compConnected());
 			if (!execList.get(i).compConnected()){
 				res = false ;
 			}
@@ -29,11 +31,28 @@ public abstract class $Circuit implements _Circuit{
 	public int nbComposant(){return elements.size();}
 	
 	/**
-	 * Ajoute un composant sur le circuit sans le brancher (pour les générateur)
+	 * Ajoute un composant sur le circuit sans le brancher
 	 */
 	public void ajouterComp($Composant c, int indice){
 		execList.add(c);
 		elements.put(indice, c);
+	}
+	
+	public void ajouterComp($Composant c, int indice, ArrayList<Fil> sorties){
+		execList.add(c);
+		elements.put(indice, c);
+		for (int i = 0; i<sorties.size(); i++){
+			connexions.add(sorties.get(i));
+		}
+		
+		
+	}
+	
+	public void connect(){
+		for(int i=0; i<connexions.size(); i++){
+			Fil f = connexions.get(i);
+			f.brancher(elements.get(f.comp1()).getSorties(f.portComp1()), elements.get(f.comp2()).getEntree(f.portComp2()));
+		}
 	}
 	
 	/**
@@ -43,13 +62,7 @@ public abstract class $Circuit implements _Circuit{
 	 * @param c2 le composant depuis lequel on connecte la sortie
 	 * @param i2 le numéro du port de sortie de c2 à connecter
 	 */
-	public void brancher ($Composant c1, int i1, $Composant c2, int i2){
-		Fil f = new Fil(c2.getSorties(i2), c1.getEntree(i1));
-	}
-	
-	public void brancherEntree ($Composant c1, int i1, $Composant c2, int i2){
-		
-	}
+	public void brancher ($Composant c1, int i1, $Composant c2, int i2){}
 	
 	public $Composant getComposant(int n_comp){return elements.get(n_comp);}
 	

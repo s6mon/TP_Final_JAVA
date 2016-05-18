@@ -7,7 +7,7 @@ public abstract class $Composant  implements _Composant{
 	protected PortSimple[] entrees;
 	protected PortMultiple[] sorties;
 	
-	public abstract void eval();
+	public abstract void exec();
 
 	public boolean compConnected() {
 		for(int i =0; i<nb_entree; i++){
@@ -30,13 +30,8 @@ public abstract class $Composant  implements _Composant{
 	public PortSimple getEntree(int i){
 		return entrees[i]; 
 	}
-	
-	public void exec(){
-		majEtatPortsEntrees();
-		eval();
-	}
 
-	private void majEtatPortsEntrees() {
+	public void majEtatPortsEntrees() {
 		for (int i = 0; i<nb_entree; i++){
 			entrees[i].majEtat();
 		}

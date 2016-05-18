@@ -15,7 +15,7 @@ public class Vcc extends $Generateur{
 	public void majEtat() {}
 
 	@Override
-	public void eval() {
+	public void exec() {
 		sorties[0].setEtat(Etat.TRUE);
 	}
 

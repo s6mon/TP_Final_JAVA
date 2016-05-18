@@ -9,6 +9,7 @@ public class CircuitFerme extends $Circuit{
 	public CircuitFerme(){
 		elements = new HashMap<Integer, $Composant>();
 		execList = new ArrayList<$Composant>();
+		connexions = new ArrayList<Fil>();
 		executable = true;
 	}
 	
@@ -20,6 +21,7 @@ public class CircuitFerme extends $Circuit{
 		this.setExecutable();
 		if(!this.executable){throw new Require("!this.executable") ;}
 		for(int i = 0; i<execList.size(); i++){
+			execList.get(i).majEtatPortsEntrees();
 			execList.get(i).exec();
 		}
 	}

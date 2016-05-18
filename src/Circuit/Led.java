@@ -26,7 +26,7 @@ public class Led extends $Recepteur {
 		}
 	}
 	
-	public void eval(){
+	public void exec(){
 		majEtat();
 		System.out.println(etat);
 	}
