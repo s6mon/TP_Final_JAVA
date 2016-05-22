@@ -9,6 +9,7 @@ public abstract class $Circuit implements _Circuit{
 	protected ArrayList<$Composant> execList; //liste que l'on tri pour executer les elements dans le bon ordre.
 	protected ArrayList<Fil> connexions;
 	protected boolean executable;
+
 	
 	/**
 	 * Fonction de l'invariant
@@ -54,6 +55,45 @@ public abstract class $Circuit implements _Circuit{
 	}
 	
 	public $Composant getComposant(int n_comp){return elements.get(n_comp);}
+	
+	public void tri(){
+		ArrayList<Integer> listNbEntree = new ArrayList<Integer>();
+		$Composant c;
+		int j =0, k = 0;
+		for(int i=0; i<execList.size(); i++){
+			c = execList.get(i);
+			listNbEntree.add(c.nb_entree);	
+		}
+
+		while( execList.size() !=  j){
+			k=j;
+			while(listNbEntree.size() != k && listNbEntree.get(k) != 0){
+				k++;
+			}
+			echanger(listNbEntree, j, k);
+			j++;
+		}
+	}
+	
+	void echanger(ArrayList<Integer> list, int j, int k){
+		$Composant c = execList.get(k);
+		execList.set(k, execList.get(j));
+		execList.set(j, c);
+		
+		int val = list.get(k);
+		list.set(k, list.get(j));
+		list.set(j, val);
+	}
+	
+	void majNbEntree($Composant c){
+		/*int nbSortie  = c.nb_sortie;
+		
+		for(int i=0; i<nbSortie; i++){
+			getSortie(i);
+			
+		}*/
+		
+	}
 	
 }
 

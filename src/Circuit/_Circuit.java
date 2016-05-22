@@ -30,4 +30,6 @@ public interface _Circuit {
 	 */
 	public void exec();
 
+	
+	public void tri();
 }
