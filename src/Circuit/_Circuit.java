@@ -29,14 +29,5 @@ public interface _Circuit {
 	 * execute le circuit, si c'est un circuit ouvert alors exécute le circuit avec la valeur des ports d'entrés
 	 */
 	public void exec();
-	
-	/**
-	 * Procédure pour brancher la sortie i2 du composant c2 a l'entrée i1 du composant c1
-	 * @param c1 le composant sur lequel on connecte l'entrée i1
-	 * @param i1 le numéro du port d'entree de c1 à connecter
-	 * @param c2 le composant depuis lequel on connecte la sortie
-	 * @param i2 le numéro du port de sortie de c2 à connecter
-	 */
-	public void brancher ($Composant c1, int i1, $Composant c2, int i2);
-	
+
 }

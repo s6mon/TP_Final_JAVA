@@ -21,8 +21,8 @@ public class CircuitFerme extends $Circuit{
 		this.setExecutable();
 		if(!this.executable){throw new Require("!this.executable") ;}
 		for(int i = 0; i<execList.size(); i++){
-			execList.get(i).majEtatPortsEntrees();
 			execList.get(i).exec();
+			execList.get(i).majEtatPortCompSuivant();
 		}
 	}
 	

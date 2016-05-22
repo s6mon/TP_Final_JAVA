@@ -27,7 +27,7 @@ public interface _Composant {
 	/**
 	 * Met à jour l'état des port d'entrée du composant.
 	 */
-	public void majEtatPortsEntrees();
+	public void majEtatPortCompSuivant();
 	
 	
 

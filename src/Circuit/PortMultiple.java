@@ -2,15 +2,15 @@ package Circuit;
 import java.util.ArrayList;
 
 public class PortMultiple extends $Port {
-	private ArrayList<Fil> Sorties;
+	private ArrayList<Fil> sorties;
 
 	public PortMultiple(){
-		Sorties = new ArrayList<Fil>();
+		sorties = new ArrayList<Fil>();
 		etat = Etat.FALSE;
 		connected = false;
 	}
 	public void connect(Fil fil) {
-		Sorties.add(fil);
+		sorties.add(fil);
 		connected = true;
 		
 	}
@@ -18,5 +18,10 @@ public class PortMultiple extends $Port {
 		return connected;
 	}
 	
-	
+	public void propageEtat(){
+		for (int i = 0; i < sorties.size(); i++){
+			sorties.get(i).getSortie().setEtat(this.getEtat());
+			//System.out.println(this.etat);
+		}
+	}
 }

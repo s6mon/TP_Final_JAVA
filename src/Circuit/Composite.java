@@ -27,8 +27,7 @@ public class Composite  extends $Circuit implements _Composant {
 
 		@Override
 		public void exec() {
-			// TODO Auto-generated method stub
-			
+			Composite.this.exec();
 		}
 		
 	}
@@ -43,6 +42,10 @@ public class Composite  extends $Circuit implements _Composant {
 		connexions = new ArrayList<Fil>();
 		this.transitions = transitions;
 		executable = false;
+	}
+	
+	public Composant heritage(){
+		return this.heritage;
 	}
 
 	@Override
@@ -61,20 +64,25 @@ public class Composite  extends $Circuit implements _Composant {
 	}
 
 	@Override
-	public void majEtatPortsEntrees() {
-		heritage.majEtatPortsEntrees();
+	public void majEtatPortCompSuivant() {
+		heritage.majEtatPortCompSuivant();
 		
 	}
 
 	@Override
 	public void exec() {
+		//trier puis :
+		//System.out.println("\ncomposite");
 		for (int i = 0; i < transitions.size(); i++){
 			Transition t = transitions.get(i);
 			elements.get(t.indiceComposant()).getEntree(t.numPort()).setEtat(heritage.getEntree(t.numEntree()).getEtat());
 		}
 		for (int i = 0; i < execList.size(); i++){
-			execList.get(i).majEtatPortsEntrees();
 			execList.get(i).exec();
+			//System.out.println(execList.get(i).getSorties(0).getEtat());
+			execList.get(i).majEtatPortCompSuivant();
 		}
+		heritage.getSorties(0).setEtat(elements.get(execList.size()).getSorties(0).getEtat()) ;
+		//System.out.println("composite\n");
 	}
 }

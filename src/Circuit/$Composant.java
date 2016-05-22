@@ -31,9 +31,9 @@ public abstract class $Composant  implements _Composant{
 		return entrees[i]; 
 	}
 
-	public void majEtatPortsEntrees() {
-		for (int i = 0; i<nb_entree; i++){
-			entrees[i].majEtat();
+	public void majEtatPortCompSuivant() {
+		for (int i = 0; i<nb_sortie; i++){
+			sorties[i].propageEtat();
 		}
 		
 	}
