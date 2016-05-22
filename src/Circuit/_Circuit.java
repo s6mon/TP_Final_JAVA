@@ -39,4 +39,6 @@ public interface _Circuit {
 	 */
 	public void brancher ($Composant c1, int i1, $Composant c2, int i2);
 	
+	public void tri();
+	
 }
