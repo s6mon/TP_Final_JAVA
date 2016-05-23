@@ -24,4 +24,8 @@ public class PortMultiple extends $Port {
 			//System.out.println(this.etat);
 		}
 	}
+	
+	public Fil getSortie(int i){
+		return sorties.get(i);
+	}
 }
