@@ -1,7 +1,6 @@
 package Circuit;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.HashMap;
 
 public abstract class $Circuit implements _Circuit{
@@ -57,6 +56,7 @@ public abstract class $Circuit implements _Circuit{
 	
 	public $Composant getComposant(int n_comp){return elements.get(n_comp);}
 	
+	/*
 	public void tri(){
 		ArrayList<Integer> listNbEntree = new ArrayList<Integer>();
 		$Composant c;
@@ -81,6 +81,7 @@ public abstract class $Circuit implements _Circuit{
 		execList.set(k, execList.get(j));
 		execList.set(j, c);
 		
+		
 		int val = list.get(k);
 		list.set(k, list.get(j));
 		list.set(j, val);
@@ -91,12 +92,14 @@ public abstract class $Circuit implements _Circuit{
 		PortMultiple val;
 		for(int i=0; i<nbSortie; i++){
 			val = c.getSorties(i);
-			while(iList.hasNext()){}
-			.comp2();
 			
+			
+			PortMultiple.getSortie(i);
+			//.comp2();
+	
 		}
 		
-	}
+	}*/
 	
 }
 
